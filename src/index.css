@@ -1,0 +1,12 @@
+
+@import "tailwindcss";
+
+/* App-level styles (minimal) */
+html, body, #root {
+	height: 100%;
+}
+
+body {
+	background: #f8fafc; /* gray-50 fallback */
+	color: #1f2937; /* gray-800 fallback */
+}
