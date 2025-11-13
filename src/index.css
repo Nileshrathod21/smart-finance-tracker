@@ -1,12 +1,42 @@
 
 @import "tailwindcss";
 
-/* App-level styles (minimal) */
+/* Global theme variables and base styles */
+:root {
+	--bg: #f8fafc;
+	--surface: #ffffff;
+	--muted: #6b7280;
+	--text: #0f172a;
+	--accent: #f59e0b; /* amber-500 */
+	--radius: 12px;
+	--card-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
 html, body, #root {
 	height: 100%;
 }
 
 body {
-	background: #f8fafc; /* gray-50 fallback */
-	color: #1f2937; /* gray-800 fallback */
+	font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	background: var(--bg);
+	color: var(--text);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.4;
+}
+
+/* Import small component stylesheet with card/grid/button utilities */
+@import "./styles/components.css";
+
+/* Responsive helpers */
+.app-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+/* Responsive typography */
+h1 { font-size: 1.5rem; }
+@media (min-width: 768px) {
+	h1 { font-size: 2rem; }
 }

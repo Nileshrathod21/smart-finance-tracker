@@ -6,19 +6,19 @@ export default function Navbar() {
   const nav = useNavigate();
 
   return (
-    <nav className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <nav className="navbar-surface shadow-sm">
+      <div className="app-container px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link to="/" className="text-2xl font-bold text-amber-600">
-            SmartFinance
+            <span style={{ letterSpacing: '-0.5px' }}>SmartFinance</span>
           </Link>
           <div className="hidden md:flex space-x-3 text-sm">
             <Link to="/" className="hover:underline">
               Dashboard
             </Link>
-            <Link to="/insights" className="hover:underline">
+            {/* <Link to="/insights" className="hover:underline">
               Insights
-            </Link>
+            </Link> */}
           </div>
         </div>
 
@@ -28,7 +28,7 @@ export default function Navbar() {
               <span className="text-sm">{user.email}</span>
               <button
                 onClick={() => logout().then(() => nav('/login'))}
-                className="px-3 py-1 bg-amber-500 text-white rounded"
+                className="btn-primary"
               >
                 Logout
               </button>
